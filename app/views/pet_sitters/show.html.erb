@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1 class="display-4">Veiwing sitter, <%= @pet_sitter.name %>.</h1>
+
 <p>
   <strong>Name:</strong>
   <%= @pet_sitter.name %>
@@ -20,5 +22,5 @@
   <%= @pet_sitter.cost %>
 </p>
 
-<%= link_to 'Edit', edit_pet_sitter_path(@pet_sitter) %> |
-<%= link_to 'Back', pet_sitters_path %>
+<button type="button" class="btn btn-outline-success"> <a class="link-success" <%= link_to 'Edit', edit_pet_sitter_path(@pet_sitter) %> </a></button>
+<button type="button" class="btn btn-outline-primary"> <a class="link-primary" <%= link_to 'Back', pet_sitters_path %>  </a></button>

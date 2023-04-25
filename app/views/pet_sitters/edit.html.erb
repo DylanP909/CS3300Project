@@ -1,6 +1,6 @@
-<h1>Editing Pet Sitter</h1>
+<h1 class="display-4">Editing sitter <%= @pet_sitter.name %>'s information.</h1>
 
 <%= render 'form', pet_sitter: @pet_sitter %>
 
-<%= link_to 'Show', @pet_sitter %> |
-<%= link_to 'Back', pet_sitters_path %>
+<button type="button" class="btn btn-outline-info"> <a class="link-info" <%= link_to 'Show', @pet_sitter %> </a></button>
+<button type="button" class="btn btn-outline-danger"> <a class="link-danger" <%= link_to 'Back', pet_sitters_path %> </a></button>

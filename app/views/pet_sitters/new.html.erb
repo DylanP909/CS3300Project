@@ -1,5 +1,7 @@
-<h1>New Pet Sitter</h1>
+<h1 class="display-4">Please enter your information</h1>
 
 <%= render 'form', pet_sitter: @pet_sitter %>
 
-<%= link_to 'Back', pet_sitters_path %>
+<p>By clicking create pet sitter you agree to the terms of generic legal diclaimer...</p>
+
+<button type="button" class="btn btn-outline-danger"> <a class="link-danger" <%= link_to 'Cancel', pet_sitters_path %> </a></button>

@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pet Sitters</h1>
+<div class="container-fluid p-2 bg-light text-dark text-left">
+  <h1 class="display-1 text-center">Welcome to Walk and Watch</h1>
+  <h3 class="display-6">Find a pet sittter or dog walker in your area for an affordable price.</h3>
+  <h3 class="display-6">Here is a list of our registared pet sitters</h3>
+</div>
 
-<table>
+<table class="table table-dark">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Sitters Name</th>
       <th>Email</th>
       <th>Description</th>
-      <th>Cost</th>
+      <th>Cost by day or hour</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +24,10 @@
         <td><%= pet_sitter.email %></td>
         <td><%= pet_sitter.description %></td>
         <td><%= pet_sitter.cost %></td>
-        <td><%= link_to 'Show', pet_sitter %></td>
-        <td><%= link_to 'Edit', edit_pet_sitter_path(pet_sitter) %></td>
-        <td><%= link_to 'Destroy', pet_sitter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button type="button" class="btn btn-outline-info"> <a class="link-info" <%= link_to 'Show', pet_sitter %> </a></button></td>
+        <td><button type="button" class="btn btn-outline-success"> <a class="link-success" <%= link_to 'Edit', edit_pet_sitter_path(pet_sitter) %> </a></button></td>
+        <td><button type="button" class="btn btn-outline-danger"> <span class="sr-only"> <a class="link-danger" 
+          <%= link_to 'Destroy', pet_sitter, method: :delete, data: { confirm: 'Are you sure? This action cannot be undone.' } %> </span></a></button></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +35,7 @@
 
 <br>
 
-<%= link_to 'New Pet Sitter', new_pet_sitter_path %>
+<div class="container-fluid p-2 bg-light text-dark text-left">
+<h3 class="display-6">Want to become a pet sitter yourself? </h3>
+<button type="button" class="btn btn-outline-success"> <a class="link-success"<%= link_to 'Sign up here', new_pet_sitter_path %></a> </button>
+</div>
