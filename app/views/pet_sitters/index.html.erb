@@ -25,9 +25,12 @@
         <td><%= pet_sitter.description %></td>
         <td><%= pet_sitter.cost %></td>
         <td><button type="button" class="btn btn-outline-info"> <a class="link-info" <%= link_to 'Show', pet_sitter %> </a></button></td>
-        <td><button type="button" class="btn btn-outline-success"> <a class="link-success" <%= link_to 'Edit', edit_pet_sitter_path(pet_sitter) %> </a></button></td>
-        <td><button type="button" class="btn btn-outline-danger"> <span class="sr-only"> <a class="link-danger" 
-          <%= link_to 'Destroy', pet_sitter, method: :delete, data: { confirm: 'Are you sure? This action cannot be undone.' } %> </span></a></button></td>
+        
+        <% if user_signed_in? %>
+          <td><button type="button" class="btn btn-outline-success"> <a class="link-success" <%= link_to 'Edit', edit_pet_sitter_path(pet_sitter) %> </a></button></td>
+          <td><button type="button" class="btn btn-outline-danger"> <span class="sr-only"> <a class="link-danger" 
+            <%= link_to 'Destroy', pet_sitter, method: :delete, data: { confirm: 'Are you sure? This action cannot be undone.' } %> </span></a></button></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

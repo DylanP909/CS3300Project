@@ -22,5 +22,7 @@
   <%= @pet_sitter.cost %>
 </p>
 
-<button type="button" class="btn btn-outline-success"> <a class="link-success" <%= link_to 'Edit', edit_pet_sitter_path(@pet_sitter) %> </a></button>
+<% if user_signed_in? %>
+  <button type="button" class="btn btn-outline-success"> <a class="link-success" <%= link_to 'Edit', edit_pet_sitter_path(@pet_sitter) %> </a></button>
+<% end %>
 <button type="button" class="btn btn-outline-primary"> <a class="link-primary" <%= link_to 'Back', pet_sitters_path %>  </a></button>
