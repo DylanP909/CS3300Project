@@ -1,12 +1,18 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container-fluid p-2 bg-light text-dark text-left">
   <h1 class="display-1 text-center">Welcome to Walk and Watch</h1>
   <h3 class="display-6">Find a pet sittter or dog walker in your area for an affordable price.</h3>
-  <h3 class="display-6">Here is a list of our registared pet sitters</h3>
 </div>
 
 <table class="table table-dark">
+
+  <p>
+  <%= form_tag pet_sitters_path, :method => "get" do %>
+    <%= label_tag(:search, "Search our Pet sitters by name") %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag("Search", :name => nil)%>
+  <% end %>
+  </p>
+  
   <thead>
     <tr>
       <th>Sitters Name</th>
@@ -40,5 +46,5 @@
 
 <div class="container-fluid p-2 bg-light text-dark text-left">
 <h3 class="display-6">Want to become a pet sitter yourself? </h3>
-<button type="button" class="btn btn-outline-success"> <a class="link-success"<%= link_to 'Sign up here', new_pet_sitter_path %></a> </button>
+<button type="button" class="btn btn-success btn-lg"> <a class="link-light"<%= link_to 'Sign up here', new_pet_sitter_path %></a> </button>
 </div>

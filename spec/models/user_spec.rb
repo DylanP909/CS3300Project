@@ -49,5 +49,18 @@ RSpec.describe User, type: :model do
         end
       end
     end
+
+    describe 'Editing existing profile' do
+      context 'When  editing is successful' do
+        it 'You can edit if your password is 6 characters or more' do
+          @user.password = '123456'
+          @user.password_confirmation = '123456'
+          expect(@user).to be_valid
+        end
+      end
+
+    end
+
+    
   end
 end

@@ -4,7 +4,7 @@ class PetSittersController < ApplicationController
 
   # GET /pet_sitters or /pet_sitters.json
   def index
-    @pet_sitters = PetSitter.all
+    @pet_sitters = PetSitter.search(params[:search])
   end
 
   # GET /pet_sitters/1 or /pet_sitters/1.json
@@ -66,6 +66,6 @@ class PetSittersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_sitter_params
-      params.require(:pet_sitter).permit(:name, :email, :description, :cost)
+      params.require(:pet_sitter).permit(:name, :email, :description, :cost, :search)
     end
 end
